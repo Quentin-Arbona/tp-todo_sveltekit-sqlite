@@ -1,38 +1,29 @@
-# sv
+## Installation
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+1 - Cloner le repository :
 
-## Creating a project
+    git clone git@github.com:Quentin-Arbona/tp-todo_sveltekit-sqlite.git
 
-If you're seeing this, you've probably already done this step. Congrats!
+    cd tp-todo_sveltekit-sqlite
 
-```sh
-# create a new project in the current directory
-npx sv create
+2 - Installer les dépendances :
 
-# create a new project in my-app
-npx sv create my-app
-```
+    npm install
 
-## Developing
+3 - Configurer les variables d'environnement
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+    cp .env.example .env
 
-```sh
-npm run dev
+    Puis éditez `.env` et remplacez :
+        - `your_api_key_here` par votre clé WeatherAPI
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+    Afin d'obtenir une clé api :
+        - Créez un compte sur https://www.weatherapi.com/
+        - Copiez votre clé API
+        - Collez-la dans `.env`
 
-## Building
+4 - Lancer le serveur :
 
-To create a production version of your app:
+        npm run dev
 
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+5 - Ouvrir http://localhost:5173
