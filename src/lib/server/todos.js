@@ -9,15 +9,15 @@ export function getTodoById(id) {
   return db.prepare('SELECT * FROM todos WHERE id = ?').get(id);
 }
 
-export function createTodo(title = '') {
-  const stmt = db.prepare('INSERT INTO todos (title) VALUES (?)');
-  const info = stmt.run(title);
+export function createTodo(title, description, category = '') {
+  const stmt = db.prepare('INSERT INTO todos (title, description, category) VALUES (?, ?, ?)');
+  const info = stmt.run(title, description, category);
   return getTodoById(info.lastInsertRowid);
 }
 
-export function updateTodo(id, title) {
-  db.prepare('UPDATE todos SET title = ? WHERE id = ?')
-    .run(title, id);
+export function updateTodo(id, title, description, category) {
+  db.prepare('UPDATE todos SET title = ?, description = ?, category = ? WHERE id = ?')
+    .run(title, description, category, id);
   return getTodoById(id);
 }
 

@@ -8,7 +8,7 @@
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Aix-en-Provence`);
     
         if (!response.ok) {
-            throw error(404, 'Echec lors de la récupération de la météo');
+            throw error(500, 'Echec lors de la récupération de la météo');
         }    
      
         const meteo = await response.json();
