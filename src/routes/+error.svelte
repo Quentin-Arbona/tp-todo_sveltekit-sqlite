@@ -1,6 +1,5 @@
 <script>
     import { page } from '$app/state';
-    import { emojirs } from './emojis';
 </script>
 
 <div class="error">
